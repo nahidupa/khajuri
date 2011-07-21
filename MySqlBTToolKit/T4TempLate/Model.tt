@@ -1,0 +1,15 @@
+﻿<#@ template language="C#v3.5" hostspecific="True" #>
+<#@ output extension=".generated.cs"  #>
+<#@ include file="BLToolkit.ttinclude" #>
+<#@ include file="MySql.ttinclude"     #>
+
+ 
+<#
+    ConnectionString = "Server=localhost;User ID=root;Password=;Persist Security Info=True;Database=Northwind";
+	
+
+    Namespace        = "Templates";
+    DataContextName  = "DataModel";
+
+    GenerateModel();
+#>
