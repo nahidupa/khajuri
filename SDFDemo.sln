@@ -31,6 +31,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLServer", "SQLServer", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFramework", "{D1F0D8EC-3D33-4C19-B380-932BE9AB6F64}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{69495810-465D-4744-B1D5-E476F4FE054E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NorthwindAccess", "NorthwindAccess", "{6933FBAC-E5A0-498D-BA9F-5193F2C8E69E}"
+	ProjectSection(SolutionItems) = preProject
+		Database\NorthwindAccess\Nwind.mdb = Database\NorthwindAccess\Nwind.mdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NorthwindMySQL", "NorthwindMySQL", "{462CA4AC-1714-4EA8-B425-FCE962384132}"
+	ProjectSection(SolutionItems) = preProject
+		Database\NorthwindMySQL\northwind.sql = Database\NorthwindMySQL\northwind.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL2000SampleDb", "SQL2000SampleDb", "{B95979E7-1274-495B-BC4E-CAECDACCDA0F}"
+	ProjectSection(SolutionItems) = preProject
+		Database\SQL2000SampleDb\SQL2000SampleDb.msi = Database\SQL2000SampleDb\SQL2000SampleDb.msi
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqlServerCompackEdition", "SqlServerCompackEdition", "{85F2BBCA-B4C2-4B32-8136-D5ED3D649F2E}"
+	ProjectSection(SolutionItems) = preProject
+		Database\SqlServerCompackEdition\Northwind.sdf = Database\SqlServerCompackEdition\Northwind.sdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -46,12 +68,16 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D1F0D8EC-3D33-4C19-B380-932BE9AB6F64} = {524B55B5-6696-43BC-BCFA-1105C7D74C51}
 		{B64FB9F9-5EB0-45FD-8E3E-64F520981ECC} = {656EFE6F-A8E0-4805-BA9E-9DD9D6D0D831}
 		{938CDAD4-D701-4280-A1F6-16F99FC8A5FF} = {656EFE6F-A8E0-4805-BA9E-9DD9D6D0D831}
 		{8FEB83F6-549D-4C15-915E-90F31BD58D25} = {656EFE6F-A8E0-4805-BA9E-9DD9D6D0D831}
 		{27D70ED9-060E-4A19-9066-B8A55E163EF0} = {656EFE6F-A8E0-4805-BA9E-9DD9D6D0D831}
 		{B8FB333D-2584-4512-8811-7E7A7994CA1E} = {656EFE6F-A8E0-4805-BA9E-9DD9D6D0D831}
+		{D1F0D8EC-3D33-4C19-B380-932BE9AB6F64} = {524B55B5-6696-43BC-BCFA-1105C7D74C51}
 		{FA3FA9D2-3958-4F16-96C3-6A199339BD23} = {B64FB9F9-5EB0-45FD-8E3E-64F520981ECC}
+		{6933FBAC-E5A0-498D-BA9F-5193F2C8E69E} = {69495810-465D-4744-B1D5-E476F4FE054E}
+		{462CA4AC-1714-4EA8-B425-FCE962384132} = {69495810-465D-4744-B1D5-E476F4FE054E}
+		{B95979E7-1274-495B-BC4E-CAECDACCDA0F} = {69495810-465D-4744-B1D5-E476F4FE054E}
+		{85F2BBCA-B4C2-4B32-8136-D5ED3D649F2E} = {69495810-465D-4744-B1D5-E476F4FE054E}
 	EndGlobalSection
 EndGlobal
