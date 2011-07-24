@@ -1,6 +1,6 @@
-﻿namespace SDFDemo
+﻿namespace SystemDataSQLite
 {
-    partial class Form1
+    partial class MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -35,20 +35,20 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(57, 56);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(517, 330);
+            this.dataGridView1.Size = new System.Drawing.Size(532, 294);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 431);
+            this.ClientSize = new System.Drawing.Size(664, 430);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "MainWindow";
+            this.Text = "MainWindow";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -57,6 +57,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+
     }
 }
-

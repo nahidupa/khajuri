@@ -24,7 +24,7 @@ namespace SDFDemo
                 List<Customer> customers = result.ToList();
             //}
 
-
+            dataGridView1.DataSource = customers;
         }
     }
 }
