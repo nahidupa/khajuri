@@ -4,995 +4,115 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NorthWindSQLiteModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="NorthWindSQLiteModel.Store" Alias="Self" Provider="System.Data.SQLite" ProviderManifestToken="ISO8601" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="NorthWindSQLiteModelStoreContainer">
-          <EntitySet Name="Categories" EntityType="NorthWindSQLiteModel.Store.Categories" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="CustomerCustomerDemo" EntityType="NorthWindSQLiteModel.Store.CustomerCustomerDemo" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="CustomerDemographics" EntityType="NorthWindSQLiteModel.Store.CustomerDemographics" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Customers" EntityType="NorthWindSQLiteModel.Store.Customers" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="EmployeeTerritories" EntityType="NorthWindSQLiteModel.Store.EmployeeTerritories" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Employees" EntityType="NorthWindSQLiteModel.Store.Employees" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Order Details" EntityType="NorthWindSQLiteModel.Store.Order Details" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Orders" EntityType="NorthWindSQLiteModel.Store.Orders" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Products" EntityType="NorthWindSQLiteModel.Store.Products" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Regions" EntityType="NorthWindSQLiteModel.Store.Regions" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Shippers" EntityType="NorthWindSQLiteModel.Store.Shippers" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Suppliers" EntityType="NorthWindSQLiteModel.Store.Suppliers" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Territories" EntityType="NorthWindSQLiteModel.Store.Territories" store:Type="Tables" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Alphabetical list of products" EntityType="NorthWindSQLiteModel.Store.Alphabetical list of products" store:Type="Views" store:Name="Alphabetical list of products" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Alphabetical list of products].[ProductID] AS [ProductID], 
-      [Alphabetical list of products].[ProductName] AS [ProductName], 
-      [Alphabetical list of products].[SupplierID] AS [SupplierID], 
-      [Alphabetical list of products].[CategoryID] AS [CategoryID], 
-      [Alphabetical list of products].[QuantityPerUnit] AS [QuantityPerUnit], 
-      [Alphabetical list of products].[UnitPrice] AS [UnitPrice], 
-      [Alphabetical list of products].[UnitsInStock] AS [UnitsInStock], 
-      [Alphabetical list of products].[UnitsOnOrder] AS [UnitsOnOrder], 
-      [Alphabetical list of products].[ReorderLevel] AS [ReorderLevel], 
-      [Alphabetical list of products].[Discontinued] AS [Discontinued], 
-      [Alphabetical list of products].[CategoryName] AS [CategoryName]
-      FROM [Alphabetical list of products] AS [Alphabetical list of products]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Current Product List" EntityType="NorthWindSQLiteModel.Store.Current Product List" store:Type="Views" store:Name="Current Product List" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Current Product List].[ProductID] AS [ProductID], 
-      [Current Product List].[ProductName] AS [ProductName]
-      FROM [Current Product List] AS [Current Product List]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Customer and Suppliers by City" EntityType="NorthWindSQLiteModel.Store.Customer and Suppliers by City" store:Type="Views" store:Name="Customer and Suppliers by City" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Customer and Suppliers by City].[City] AS [City], 
-      [Customer and Suppliers by City].[CompanyName] AS [CompanyName], 
-      [Customer and Suppliers by City].[ContactName] AS [ContactName]
-      FROM [Customer and Suppliers by City] AS [Customer and Suppliers by City]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Invoices" EntityType="NorthWindSQLiteModel.Store.Invoices" store:Type="Views" store:Name="Invoices" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Invoices].[ShipName] AS [ShipName], 
-      [Invoices].[ShipAddress] AS [ShipAddress], 
-      [Invoices].[ShipCity] AS [ShipCity], 
-      [Invoices].[ShipRegion] AS [ShipRegion], 
-      [Invoices].[ShipPostalCode] AS [ShipPostalCode], 
-      [Invoices].[ShipCountry] AS [ShipCountry], 
-      [Invoices].[CustomerID] AS [CustomerID], 
-      [Invoices].[CustomerName] AS [CustomerName], 
-      [Invoices].[Address] AS [Address], 
-      [Invoices].[City] AS [City], 
-      [Invoices].[Region] AS [Region], 
-      [Invoices].[PostalCode] AS [PostalCode], 
-      [Invoices].[Country] AS [Country], 
-      [Invoices].[OrderID] AS [OrderID], 
-      [Invoices].[OrderDate] AS [OrderDate], 
-      [Invoices].[RequiredDate] AS [RequiredDate], 
-      [Invoices].[ShippedDate] AS [ShippedDate], 
-      [Invoices].[ShipperName] AS [ShipperName], 
-      [Invoices].[ProductID] AS [ProductID], 
-      [Invoices].[ProductName] AS [ProductName], 
-      [Invoices].[UnitPrice] AS [UnitPrice], 
-      [Invoices].[Quantity] AS [Quantity], 
-      [Invoices].[Discount] AS [Discount], 
-      [Invoices].[Freight] AS [Freight]
-      FROM [Invoices] AS [Invoices]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Order Subtotals" EntityType="NorthWindSQLiteModel.Store.Order Subtotals" store:Type="Views" store:Name="Order Subtotals" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Order Subtotals].[OrderID] AS [OrderID]
-      FROM [Order Subtotals] AS [Order Subtotals]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Orders Qry" EntityType="NorthWindSQLiteModel.Store.Orders Qry" store:Type="Views" store:Name="Orders Qry" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Orders Qry].[OrderID] AS [OrderID], 
-      [Orders Qry].[CustomerID] AS [CustomerID], 
-      [Orders Qry].[EmployeeID] AS [EmployeeID], 
-      [Orders Qry].[OrderDate] AS [OrderDate], 
-      [Orders Qry].[RequiredDate] AS [RequiredDate], 
-      [Orders Qry].[ShippedDate] AS [ShippedDate], 
-      [Orders Qry].[ShipVia] AS [ShipVia], 
-      [Orders Qry].[Freight] AS [Freight], 
-      [Orders Qry].[ShipName] AS [ShipName], 
-      [Orders Qry].[ShipAddress] AS [ShipAddress], 
-      [Orders Qry].[ShipCity] AS [ShipCity], 
-      [Orders Qry].[ShipRegion] AS [ShipRegion], 
-      [Orders Qry].[ShipPostalCode] AS [ShipPostalCode], 
-      [Orders Qry].[ShipCountry] AS [ShipCountry], 
-      [Orders Qry].[CompanyName] AS [CompanyName], 
-      [Orders Qry].[Address] AS [Address], 
-      [Orders Qry].[City] AS [City], 
-      [Orders Qry].[Region] AS [Region], 
-      [Orders Qry].[PostalCode] AS [PostalCode], 
-      [Orders Qry].[Country] AS [Country]
-      FROM [Orders Qry] AS [Orders Qry]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Product Sales for 1997" EntityType="NorthWindSQLiteModel.Store.Product Sales for 1997" store:Type="Views" store:Name="Product Sales for 1997" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Product Sales for 1997].[CategoryName] AS [CategoryName], 
-      [Product Sales for 1997].[ProductName] AS [ProductName]
-      FROM [Product Sales for 1997] AS [Product Sales for 1997]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Products Above Average Price" EntityType="NorthWindSQLiteModel.Store.Products Above Average Price" store:Type="Views" store:Name="Products Above Average Price" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Products Above Average Price].[ProductName] AS [ProductName], 
-      [Products Above Average Price].[UnitPrice] AS [UnitPrice]
-      FROM [Products Above Average Price] AS [Products Above Average Price]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Products by Category" EntityType="NorthWindSQLiteModel.Store.Products by Category" store:Type="Views" store:Name="Products by Category" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Products by Category].[CategoryName] AS [CategoryName], 
-      [Products by Category].[ProductName] AS [ProductName], 
-      [Products by Category].[QuantityPerUnit] AS [QuantityPerUnit], 
-      [Products by Category].[UnitsInStock] AS [UnitsInStock], 
-      [Products by Category].[Discontinued] AS [Discontinued]
-      FROM [Products by Category] AS [Products by Category]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Quarterly Orders" EntityType="NorthWindSQLiteModel.Store.Quarterly Orders" store:Type="Views" store:Name="Quarterly Orders" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [Quarterly Orders].[CustomerID] AS [CustomerID], 
-      [Quarterly Orders].[CompanyName] AS [CompanyName], 
-      [Quarterly Orders].[City] AS [City], 
-      [Quarterly Orders].[Country] AS [Country]
-      FROM [Quarterly Orders] AS [Quarterly Orders]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="album" EntityType="NorthWindSQLiteModel.Store.album" store:Type="Tables" />
+          <EntitySet Name="song" EntityType="NorthWindSQLiteModel.Store.song" store:Type="Tables" />
+          <AssociationSet Name="FK_song_0" Association="NorthWindSQLiteModel.Store.FK_song_0">
+            <End Role="album" EntitySet="album" />
+            <End Role="song" EntitySet="song" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Categories">
+        <EntityType Name="album">
           <Key>
-            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="albumartist" />
+            <PropertyRef Name="albumname" />
           </Key>
-          <Property Name="CategoryID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CategoryName" Type="nvarchar" />
-          <Property Name="Description" Type="nvarchar" />
-          <Property Name="Picture" Type="blob" />
+          <Property Name="albumartist" Type="nvarchar" Nullable="false" />
+          <Property Name="albumname" Type="nvarchar" Nullable="false" />
+          <Property Name="albumcover" Type="blob" />
         </EntityType>
-        <EntityType Name="CustomerCustomerDemo">
+        <EntityType Name="song">
           <Key>
-            <PropertyRef Name="CustomerID" />
-            <PropertyRef Name="CustomerTypeID" />
+            <PropertyRef Name="songid" />
           </Key>
-          <Property Name="CustomerID" Type="nvarchar" Nullable="false" />
-          <Property Name="CustomerTypeID" Type="nvarchar" Nullable="false" />
+          <Property Name="songid" Type="integer" Nullable="false" />
+          <Property Name="songartist" Type="nvarchar" />
+          <Property Name="songalbum" Type="nvarchar" />
+          <Property Name="songname" Type="nvarchar" />
         </EntityType>
-        <EntityType Name="CustomerDemographics">
-          <Key>
-            <PropertyRef Name="CustomerTypeID" />
-          </Key>
-          <Property Name="CustomerTypeID" Type="nvarchar" Nullable="false" />
-          <Property Name="CustomerDesc" Type="nvarchar" />
-        </EntityType>
-        <EntityType Name="Customers">
-          <Key>
-            <PropertyRef Name="CustomerID" />
-          </Key>
-          <Property Name="CustomerID" Type="nvarchar" Nullable="false" />
-          <Property Name="CompanyName" Type="nvarchar" />
-          <Property Name="ContactName" Type="nvarchar" />
-          <Property Name="ContactTitle" Type="nvarchar" />
-          <Property Name="Address" Type="nvarchar" />
-          <Property Name="City" Type="nvarchar" />
-          <Property Name="Region" Type="nvarchar" />
-          <Property Name="PostalCode" Type="nvarchar" />
-          <Property Name="Country" Type="nvarchar" />
-          <Property Name="Phone" Type="nvarchar" />
-          <Property Name="Fax" Type="nvarchar" />
-        </EntityType>
-        <EntityType Name="EmployeeTerritories">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="TerritoryID" />
-          </Key>
-          <Property Name="EmployeeID" Type="integer" Nullable="false" />
-          <Property Name="TerritoryID" Type="nvarchar" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Employees">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-          </Key>
-          <Property Name="EmployeeID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="LastName" Type="nvarchar" />
-          <Property Name="FirstName" Type="nvarchar" />
-          <Property Name="Title" Type="nvarchar" />
-          <Property Name="TitleOfCourtesy" Type="nvarchar" />
-          <Property Name="BirthDate" Type="datetime" />
-          <Property Name="HireDate" Type="datetime" />
-          <Property Name="Address" Type="nvarchar" />
-          <Property Name="City" Type="nvarchar" />
-          <Property Name="Region" Type="nvarchar" />
-          <Property Name="PostalCode" Type="nvarchar" />
-          <Property Name="Country" Type="nvarchar" />
-          <Property Name="HomePhone" Type="nvarchar" />
-          <Property Name="Extension" Type="nvarchar" />
-          <Property Name="Photo" Type="blob" />
-          <Property Name="Notes" Type="nvarchar" />
-          <Property Name="ReportsTo" Type="integer" />
-          <Property Name="PhotoPath" Type="nvarchar" />
-        </EntityType>
-        <EntityType Name="Order Details">
-          <Key>
-            <PropertyRef Name="OrderID" />
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="OrderID" Type="integer" Nullable="false" />
-          <Property Name="ProductID" Type="integer" Nullable="false" />
-          <Property Name="UnitPrice" Type="decimal" Nullable="false" Precision="53" />
-          <Property Name="Quantity" Type="integer" Nullable="false" />
-          <Property Name="Discount" Type="real" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Orders">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerID" Type="nvarchar" />
-          <Property Name="EmployeeID" Type="integer" />
-          <Property Name="OrderDate" Type="datetime" />
-          <Property Name="RequiredDate" Type="datetime" />
-          <Property Name="ShippedDate" Type="datetime" />
-          <Property Name="ShipVia" Type="integer" />
-          <Property Name="Freight" Type="decimal" Precision="53" />
-          <Property Name="ShipName" Type="nvarchar" />
-          <Property Name="ShipAddress" Type="nvarchar" />
-          <Property Name="ShipCity" Type="nvarchar" />
-          <Property Name="ShipRegion" Type="nvarchar" />
-          <Property Name="ShipPostalCode" Type="nvarchar" />
-          <Property Name="ShipCountry" Type="nvarchar" />
-        </EntityType>
-        <EntityType Name="Products">
-          <Key>
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="ProductID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ProductName" Type="nvarchar" Nullable="false" />
-          <Property Name="SupplierID" Type="integer" />
-          <Property Name="CategoryID" Type="integer" />
-          <Property Name="QuantityPerUnit" Type="nvarchar" />
-          <Property Name="UnitPrice" Type="decimal" Precision="53" />
-          <Property Name="UnitsInStock" Type="integer" />
-          <Property Name="UnitsOnOrder" Type="integer" />
-          <Property Name="ReorderLevel" Type="integer" />
-          <Property Name="Discontinued" Type="nvarchar" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Regions">
-          <Key>
-            <PropertyRef Name="RegionID" />
-          </Key>
-          <Property Name="RegionID" Type="integer" Nullable="false" />
-          <Property Name="RegionDescription" Type="nvarchar" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Shippers">
-          <Key>
-            <PropertyRef Name="ShipperID" />
-          </Key>
-          <Property Name="ShipperID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CompanyName" Type="nvarchar" Nullable="false" />
-          <Property Name="Phone" Type="nvarchar" />
-        </EntityType>
-        <EntityType Name="Suppliers">
-          <Key>
-            <PropertyRef Name="SupplierID" />
-          </Key>
-          <Property Name="SupplierID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CompanyName" Type="nvarchar" Nullable="false" />
-          <Property Name="ContactName" Type="nvarchar" />
-          <Property Name="ContactTitle" Type="nvarchar" />
-          <Property Name="Address" Type="nvarchar" />
-          <Property Name="City" Type="nvarchar" />
-          <Property Name="Region" Type="nvarchar" />
-          <Property Name="PostalCode" Type="nvarchar" />
-          <Property Name="Country" Type="nvarchar" />
-          <Property Name="Phone" Type="nvarchar" />
-          <Property Name="Fax" Type="nvarchar" />
-          <Property Name="HomePage" Type="nvarchar" />
-        </EntityType>
-        <EntityType Name="Territories">
-          <Key>
-            <PropertyRef Name="TerritoryID" />
-          </Key>
-          <Property Name="TerritoryID" Type="nvarchar" Nullable="false" />
-          <Property Name="TerritoryDescription" Type="nvarchar" Nullable="false" />
-          <Property Name="RegionID" Type="integer" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Alphabetical list of products' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="Alphabetical list of products">
-          <Key>
-            <PropertyRef Name="ProductID" />
-            <PropertyRef Name="ProductName" />
-            <PropertyRef Name="Discontinued" />
-          </Key>
-          <Property Name="ProductID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ProductName" Type="nvarchar" Nullable="false" />
-          <Property Name="SupplierID" Type="integer" />
-          <Property Name="CategoryID" Type="integer" />
-          <Property Name="QuantityPerUnit" Type="nvarchar" />
-          <Property Name="UnitPrice" Type="decimal" />
-          <Property Name="UnitsInStock" Type="integer" />
-          <Property Name="UnitsOnOrder" Type="integer" />
-          <Property Name="ReorderLevel" Type="integer" />
-          <Property Name="Discontinued" Type="nvarchar" Nullable="false" />
-          <Property Name="CategoryName" Type="nvarchar" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Current Product List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="Current Product List">
-          <Key>
-            <PropertyRef Name="ProductID" />
-            <PropertyRef Name="ProductName" />
-          </Key>
-          <Property Name="ProductID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ProductName" Type="nvarchar" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Customer and Suppliers by City' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      warning 6005: The data type '' is not supported; the column 'Relationship' in table 'main.Customer and Suppliers by City' was excluded.
-      -->
-        <EntityType Name="Customer and Suppliers by City">
-          <Key>
-            <PropertyRef Name="CompanyName" />
-          </Key>
-          <Property Name="City" Type="nvarchar" />
-          <Property Name="CompanyName" Type="nvarchar" Nullable="false" />
-          <Property Name="ContactName" Type="nvarchar" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Invoices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      warning 6005: The data type '' is not supported; the column 'Salesperson' in table 'main.Invoices' was excluded.
-      warning 6005: The data type '' is not supported; the column 'ExtendedPrice' in table 'main.Invoices' was excluded.
-      -->
-        <EntityType Name="Invoices">
-          <Key>
-            <PropertyRef Name="OrderID" />
-            <PropertyRef Name="ShipperName" />
-            <PropertyRef Name="ProductID" />
-            <PropertyRef Name="ProductName" />
-            <PropertyRef Name="UnitPrice" />
-            <PropertyRef Name="Quantity" />
-            <PropertyRef Name="Discount" />
-          </Key>
-          <Property Name="ShipName" Type="nvarchar" />
-          <Property Name="ShipAddress" Type="nvarchar" />
-          <Property Name="ShipCity" Type="nvarchar" />
-          <Property Name="ShipRegion" Type="nvarchar" />
-          <Property Name="ShipPostalCode" Type="nvarchar" />
-          <Property Name="ShipCountry" Type="nvarchar" />
-          <Property Name="CustomerID" Type="nvarchar" />
-          <Property Name="CustomerName" Type="nvarchar" />
-          <Property Name="Address" Type="nvarchar" />
-          <Property Name="City" Type="nvarchar" />
-          <Property Name="Region" Type="nvarchar" />
-          <Property Name="PostalCode" Type="nvarchar" />
-          <Property Name="Country" Type="nvarchar" />
-          <Property Name="OrderID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="OrderDate" Type="datetime" />
-          <Property Name="RequiredDate" Type="datetime" />
-          <Property Name="ShippedDate" Type="datetime" />
-          <Property Name="ShipperName" Type="nvarchar" Nullable="false" />
-          <Property Name="ProductID" Type="integer" Nullable="false" />
-          <Property Name="ProductName" Type="nvarchar" Nullable="false" />
-          <Property Name="UnitPrice" Type="decimal" Nullable="false" />
-          <Property Name="Quantity" Type="integer" Nullable="false" />
-          <Property Name="Discount" Type="real" Nullable="false" />
-          <Property Name="Freight" Type="decimal" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Order Subtotals' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      warning 6005: The data type '' is not supported; the column 'Subtotal' in table 'main.Order Subtotals' was excluded.
-      -->
-        <EntityType Name="Order Subtotals">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="integer" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Orders Qry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="Orders Qry">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="CustomerID" Type="nvarchar" />
-          <Property Name="EmployeeID" Type="integer" />
-          <Property Name="OrderDate" Type="datetime" />
-          <Property Name="RequiredDate" Type="datetime" />
-          <Property Name="ShippedDate" Type="datetime" />
-          <Property Name="ShipVia" Type="integer" />
-          <Property Name="Freight" Type="decimal" />
-          <Property Name="ShipName" Type="nvarchar" />
-          <Property Name="ShipAddress" Type="nvarchar" />
-          <Property Name="ShipCity" Type="nvarchar" />
-          <Property Name="ShipRegion" Type="nvarchar" />
-          <Property Name="ShipPostalCode" Type="nvarchar" />
-          <Property Name="ShipCountry" Type="nvarchar" />
-          <Property Name="CompanyName" Type="nvarchar" />
-          <Property Name="Address" Type="nvarchar" />
-          <Property Name="City" Type="nvarchar" />
-          <Property Name="Region" Type="nvarchar" />
-          <Property Name="PostalCode" Type="nvarchar" />
-          <Property Name="Country" Type="nvarchar" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Product Sales for 1997' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      warning 6005: The data type '' is not supported; the column 'ProductSales' in table 'main.Product Sales for 1997' was excluded.
-      -->
-        <EntityType Name="Product Sales for 1997">
-          <Key>
-            <PropertyRef Name="ProductName" />
-          </Key>
-          <Property Name="CategoryName" Type="nvarchar" />
-          <Property Name="ProductName" Type="nvarchar" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Products Above Average Price' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="Products Above Average Price">
-          <Key>
-            <PropertyRef Name="ProductName" />
-          </Key>
-          <Property Name="ProductName" Type="nvarchar" Nullable="false" />
-          <Property Name="UnitPrice" Type="decimal" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Products by Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="Products by Category">
-          <Key>
-            <PropertyRef Name="ProductName" />
-            <PropertyRef Name="Discontinued" />
-          </Key>
-          <Property Name="CategoryName" Type="nvarchar" />
-          <Property Name="ProductName" Type="nvarchar" Nullable="false" />
-          <Property Name="QuantityPerUnit" Type="nvarchar" />
-          <Property Name="UnitsInStock" Type="integer" />
-          <Property Name="Discontinued" Type="nvarchar" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'main.Quarterly Orders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
-        <EntityType Name="Quarterly Orders">
-          <Key>
-            <PropertyRef Name="CustomerID" />
-          </Key>
-          <Property Name="CustomerID" Type="nvarchar" Nullable="false" />
-          <Property Name="CompanyName" Type="nvarchar" />
-          <Property Name="City" Type="nvarchar" />
-          <Property Name="Country" Type="nvarchar" />
-        </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <Association Name="FK_song_0">
+          <End Role="album" Type="NorthWindSQLiteModel.Store.album" Multiplicity="0..1" />
+          <End Role="song" Type="NorthWindSQLiteModel.Store.song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="album">
+              <PropertyRef Name="albumartist" />
+              <PropertyRef Name="albumname" />
+            </Principal>
+            <Dependent Role="song">
+              <PropertyRef Name="songartist" />
+              <PropertyRef Name="songalbum" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NorthWindSQLiteModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
         <EntityContainer Name="NorthWindSQLiteEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-          <EntitySet Name="Categories" EntityType="NorthWindSQLiteModel.Category" />
-          <EntitySet Name="CustomerCustomerDemoes" EntityType="NorthWindSQLiteModel.CustomerCustomerDemo" />
-          <EntitySet Name="CustomerDemographics" EntityType="NorthWindSQLiteModel.CustomerDemographic" />
-          <EntitySet Name="Customers" EntityType="NorthWindSQLiteModel.Customer" />
-          <EntitySet Name="EmployeeTerritories" EntityType="NorthWindSQLiteModel.EmployeeTerritory" />
-          <EntitySet Name="Employees" EntityType="NorthWindSQLiteModel.Employee" />
-          <EntitySet Name="Order_Details" EntityType="NorthWindSQLiteModel.Order_Detail" />
-          <EntitySet Name="Orders" EntityType="NorthWindSQLiteModel.Order" />
-          <EntitySet Name="Products" EntityType="NorthWindSQLiteModel.Product" />
-          <EntitySet Name="Regions" EntityType="NorthWindSQLiteModel.Region" />
-          <EntitySet Name="Shippers" EntityType="NorthWindSQLiteModel.Shipper" />
-          <EntitySet Name="Suppliers" EntityType="NorthWindSQLiteModel.Supplier" />
-          <EntitySet Name="Territories" EntityType="NorthWindSQLiteModel.Territory" />
-          <EntitySet Name="Alphabetical_list_of_products" EntityType="NorthWindSQLiteModel.Alphabetical_list_of_product" />
-          <EntitySet Name="Current_Product_Lists" EntityType="NorthWindSQLiteModel.Current_Product_List" />
-          <EntitySet Name="Customer_and_Suppliers_by_Cities" EntityType="NorthWindSQLiteModel.Customer_and_Suppliers_by_City" />
-          <EntitySet Name="Invoices" EntityType="NorthWindSQLiteModel.Invoice" />
-          <EntitySet Name="Order_Subtotals" EntityType="NorthWindSQLiteModel.Order_Subtotal" />
-          <EntitySet Name="Orders_Qries" EntityType="NorthWindSQLiteModel.Orders_Qry" />
-          <EntitySet Name="Product_Sales_for_1997" EntityType="NorthWindSQLiteModel.Product_Sales_for_1997" />
-          <EntitySet Name="Products_Above_Average_Prices" EntityType="NorthWindSQLiteModel.Products_Above_Average_Price" />
-          <EntitySet Name="Products_by_Categories" EntityType="NorthWindSQLiteModel.Products_by_Category" />
-          <EntitySet Name="Quarterly_Orders" EntityType="NorthWindSQLiteModel.Quarterly_Order" />
+          <EntitySet Name="albums" EntityType="NorthWindSQLiteModel.album" />
+          <EntitySet Name="songs" EntityType="NorthWindSQLiteModel.song" />
+          <AssociationSet Name="FK_song_0" Association="NorthWindSQLiteModel.FK_song_0">
+            <End Role="album" EntitySet="albums" />
+            <End Role="song" EntitySet="songs" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Category">
+        <EntityType Name="album">
           <Key>
-            <PropertyRef Name="CategoryID" />
+            <PropertyRef Name="albumartist" />
+            <PropertyRef Name="albumname" />
           </Key>
-          <Property Name="CategoryID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="CategoryName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Description" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Picture" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+          <Property Type="String" Name="albumartist" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="albumname" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="albumcover" MaxLength="2147483647" FixedLength="false" />
+          <NavigationProperty Name="songs" Relationship="NorthWindSQLiteModel.FK_song_0" FromRole="album" ToRole="song" />
         </EntityType>
-        <EntityType Name="CustomerCustomerDemo">
+        <EntityType Name="song">
           <Key>
-            <PropertyRef Name="CustomerID" />
-            <PropertyRef Name="CustomerTypeID" />
+            <PropertyRef Name="songid" />
           </Key>
-          <Property Name="CustomerID" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CustomerTypeID" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
+          <Property Type="Int64" Name="songid" Nullable="false" />
+          <Property Type="String" Name="songname" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="album" Relationship="NorthWindSQLiteModel.FK_song_0" FromRole="song" ToRole="album" />
         </EntityType>
-        <EntityType Name="CustomerDemographic">
-          <Key>
-            <PropertyRef Name="CustomerTypeID" />
-          </Key>
-          <Property Name="CustomerTypeID" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CustomerDesc" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Customer">
-          <Key>
-            <PropertyRef Name="CustomerID" />
-          </Key>
-          <Property Name="CustomerID" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CompanyName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ContactName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ContactTitle" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Region" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="PostalCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Country" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Phone" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Fax" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="EmployeeTerritory">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-            <PropertyRef Name="TerritoryID" />
-          </Key>
-          <Property Name="EmployeeID" Type="Int64" Nullable="false" />
-          <Property Name="TerritoryID" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Employee">
-          <Key>
-            <PropertyRef Name="EmployeeID" />
-          </Key>
-          <Property Name="EmployeeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="LastName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="FirstName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Title" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="TitleOfCourtesy" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="BirthDate" Type="DateTime" />
-          <Property Name="HireDate" Type="DateTime" />
-          <Property Name="Address" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Region" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="PostalCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Country" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="HomePhone" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Extension" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Photo" Type="Binary" MaxLength="2147483647" FixedLength="false" />
-          <Property Name="Notes" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ReportsTo" Type="Int64" />
-          <Property Name="PhotoPath" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Order_Detail">
-          <Key>
-            <PropertyRef Name="OrderID" />
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="OrderID" Type="Int64" Nullable="false" />
-          <Property Name="ProductID" Type="Int64" Nullable="false" />
-          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="53" Scale="0" />
-          <Property Name="Quantity" Type="Int64" Nullable="false" />
-          <Property Name="Discount" Type="Single" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Order">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="CustomerID" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="EmployeeID" Type="Int64" />
-          <Property Name="OrderDate" Type="DateTime" />
-          <Property Name="RequiredDate" Type="DateTime" />
-          <Property Name="ShippedDate" Type="DateTime" />
-          <Property Name="ShipVia" Type="Int64" />
-          <Property Name="Freight" Type="Decimal" Precision="53" Scale="0" />
-          <Property Name="ShipName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipAddress" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipCity" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipRegion" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipPostalCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipCountry" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="ProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="SupplierID" Type="Int64" />
-          <Property Name="CategoryID" Type="Int64" />
-          <Property Name="QuantityPerUnit" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="UnitPrice" Type="Decimal" Precision="53" Scale="0" />
-          <Property Name="UnitsInStock" Type="Int64" />
-          <Property Name="UnitsOnOrder" Type="Int64" />
-          <Property Name="ReorderLevel" Type="Int64" />
-          <Property Name="Discontinued" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Region">
-          <Key>
-            <PropertyRef Name="RegionID" />
-          </Key>
-          <Property Name="RegionID" Type="Int64" Nullable="false" />
-          <Property Name="RegionDescription" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Shipper">
-          <Key>
-            <PropertyRef Name="ShipperID" />
-          </Key>
-          <Property Name="ShipperID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Phone" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Supplier">
-          <Key>
-            <PropertyRef Name="SupplierID" />
-          </Key>
-          <Property Name="SupplierID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ContactName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ContactTitle" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Region" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="PostalCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Country" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Phone" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Fax" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="HomePage" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Territory">
-          <Key>
-            <PropertyRef Name="TerritoryID" />
-          </Key>
-          <Property Name="TerritoryID" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="TerritoryDescription" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="RegionID" Type="Int64" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Alphabetical_list_of_product">
-          <Key>
-            <PropertyRef Name="ProductID" />
-            <PropertyRef Name="ProductName" />
-            <PropertyRef Name="Discontinued" />
-          </Key>
-          <Property Name="ProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="SupplierID" Type="Int64" />
-          <Property Name="CategoryID" Type="Int64" />
-          <Property Name="QuantityPerUnit" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="UnitsInStock" Type="Int64" />
-          <Property Name="UnitsOnOrder" Type="Int64" />
-          <Property Name="ReorderLevel" Type="Int64" />
-          <Property Name="Discontinued" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CategoryName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Current_Product_List">
-          <Key>
-            <PropertyRef Name="ProductID" />
-            <PropertyRef Name="ProductName" />
-          </Key>
-          <Property Name="ProductID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Customer_and_Suppliers_by_City">
-          <Key>
-            <PropertyRef Name="CompanyName" />
-          </Key>
-          <Property Name="City" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ContactName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Invoice">
-          <Key>
-            <PropertyRef Name="OrderID" />
-            <PropertyRef Name="ShipperName" />
-            <PropertyRef Name="ProductID" />
-            <PropertyRef Name="ProductName" />
-            <PropertyRef Name="UnitPrice" />
-            <PropertyRef Name="Quantity" />
-            <PropertyRef Name="Discount" />
-          </Key>
-          <Property Name="ShipName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipAddress" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipCity" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipRegion" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipPostalCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipCountry" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CustomerID" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CustomerName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Region" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="PostalCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Country" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="OrderID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="OrderDate" Type="DateTime" />
-          <Property Name="RequiredDate" Type="DateTime" />
-          <Property Name="ShippedDate" Type="DateTime" />
-          <Property Name="ShipperName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ProductID" Type="Int64" Nullable="false" />
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="UnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="Quantity" Type="Int64" Nullable="false" />
-          <Property Name="Discount" Type="Single" Nullable="false" />
-          <Property Name="Freight" Type="Decimal" Precision="18" Scale="0" />
-        </EntityType>
-        <EntityType Name="Order_Subtotal">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="Int64" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Orders_Qry">
-          <Key>
-            <PropertyRef Name="OrderID" />
-          </Key>
-          <Property Name="OrderID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="CustomerID" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="EmployeeID" Type="Int64" />
-          <Property Name="OrderDate" Type="DateTime" />
-          <Property Name="RequiredDate" Type="DateTime" />
-          <Property Name="ShippedDate" Type="DateTime" />
-          <Property Name="ShipVia" Type="Int64" />
-          <Property Name="Freight" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="ShipName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipAddress" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipCity" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipRegion" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipPostalCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ShipCountry" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CompanyName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Region" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="PostalCode" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Country" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Product_Sales_for_1997">
-          <Key>
-            <PropertyRef Name="ProductName" />
-          </Key>
-          <Property Name="CategoryName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Products_Above_Average_Price">
-          <Key>
-            <PropertyRef Name="ProductName" />
-          </Key>
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="0" />
-        </EntityType>
-        <EntityType Name="Products_by_Category">
-          <Key>
-            <PropertyRef Name="ProductName" />
-            <PropertyRef Name="Discontinued" />
-          </Key>
-          <Property Name="CategoryName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="QuantityPerUnit" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="UnitsInStock" Type="Int64" />
-          <Property Name="Discontinued" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Quarterly_Order">
-          <Key>
-            <PropertyRef Name="CustomerID" />
-          </Key>
-          <Property Name="CustomerID" Type="String" Nullable="false" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="CompanyName" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-          <Property Name="Country" Type="String" MaxLength="2147483647" Unicode="true" FixedLength="false" />
-        </EntityType>
-      </Schema>
+        <Association Name="FK_song_0">
+          <End Type="NorthWindSQLiteModel.album" Role="album" Multiplicity="0..1" />
+          <End Type="NorthWindSQLiteModel.song" Role="song" Multiplicity="*" />
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
         <EntityContainerMapping StorageEntityContainer="NorthWindSQLiteModelStoreContainer" CdmEntityContainer="NorthWindSQLiteEntities">
-          <EntitySetMapping Name="Categories"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Category"><MappingFragment StoreEntitySet="Categories">
-            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-            <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-            <ScalarProperty Name="Description" ColumnName="Description" />
-            <ScalarProperty Name="Picture" ColumnName="Picture" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="CustomerCustomerDemoes"><EntityTypeMapping TypeName="NorthWindSQLiteModel.CustomerCustomerDemo"><MappingFragment StoreEntitySet="CustomerCustomerDemo">
-            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-            <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="CustomerDemographics"><EntityTypeMapping TypeName="NorthWindSQLiteModel.CustomerDemographic"><MappingFragment StoreEntitySet="CustomerDemographics">
-            <ScalarProperty Name="CustomerTypeID" ColumnName="CustomerTypeID" />
-            <ScalarProperty Name="CustomerDesc" ColumnName="CustomerDesc" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Customers"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Customer"><MappingFragment StoreEntitySet="Customers">
-            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-            <ScalarProperty Name="ContactName" ColumnName="ContactName" />
-            <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
-            <ScalarProperty Name="Address" ColumnName="Address" />
-            <ScalarProperty Name="City" ColumnName="City" />
-            <ScalarProperty Name="Region" ColumnName="Region" />
-            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-            <ScalarProperty Name="Country" ColumnName="Country" />
-            <ScalarProperty Name="Phone" ColumnName="Phone" />
-            <ScalarProperty Name="Fax" ColumnName="Fax" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="EmployeeTerritories"><EntityTypeMapping TypeName="NorthWindSQLiteModel.EmployeeTerritory"><MappingFragment StoreEntitySet="EmployeeTerritories">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Employees"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Employee"><MappingFragment StoreEntitySet="Employees">
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="LastName" ColumnName="LastName" />
-            <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-            <ScalarProperty Name="Title" ColumnName="Title" />
-            <ScalarProperty Name="TitleOfCourtesy" ColumnName="TitleOfCourtesy" />
-            <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-            <ScalarProperty Name="HireDate" ColumnName="HireDate" />
-            <ScalarProperty Name="Address" ColumnName="Address" />
-            <ScalarProperty Name="City" ColumnName="City" />
-            <ScalarProperty Name="Region" ColumnName="Region" />
-            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-            <ScalarProperty Name="Country" ColumnName="Country" />
-            <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
-            <ScalarProperty Name="Extension" ColumnName="Extension" />
-            <ScalarProperty Name="Photo" ColumnName="Photo" />
-            <ScalarProperty Name="Notes" ColumnName="Notes" />
-            <ScalarProperty Name="ReportsTo" ColumnName="ReportsTo" />
-            <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Order_Details"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Order_Detail"><MappingFragment StoreEntitySet="Order Details">
-            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-            <ScalarProperty Name="Discount" ColumnName="Discount" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Orders"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Order"><MappingFragment StoreEntitySet="Orders">
-            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-            <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
-            <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-            <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
-            <ScalarProperty Name="Freight" ColumnName="Freight" />
-            <ScalarProperty Name="ShipName" ColumnName="ShipName" />
-            <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
-            <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
-            <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
-            <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
-            <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Products"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Product"><MappingFragment StoreEntitySet="Products">
-            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-            <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-            <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
-            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-            <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
-            <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
-            <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
-            <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Regions"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Region"><MappingFragment StoreEntitySet="Regions">
-            <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-            <ScalarProperty Name="RegionDescription" ColumnName="RegionDescription" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Shippers"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Shipper"><MappingFragment StoreEntitySet="Shippers">
-            <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
-            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-            <ScalarProperty Name="Phone" ColumnName="Phone" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Suppliers"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Supplier"><MappingFragment StoreEntitySet="Suppliers">
-            <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-            <ScalarProperty Name="ContactName" ColumnName="ContactName" />
-            <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
-            <ScalarProperty Name="Address" ColumnName="Address" />
-            <ScalarProperty Name="City" ColumnName="City" />
-            <ScalarProperty Name="Region" ColumnName="Region" />
-            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-            <ScalarProperty Name="Country" ColumnName="Country" />
-            <ScalarProperty Name="Phone" ColumnName="Phone" />
-            <ScalarProperty Name="Fax" ColumnName="Fax" />
-            <ScalarProperty Name="HomePage" ColumnName="HomePage" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Territories"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Territory"><MappingFragment StoreEntitySet="Territories">
-            <ScalarProperty Name="TerritoryID" ColumnName="TerritoryID" />
-            <ScalarProperty Name="TerritoryDescription" ColumnName="TerritoryDescription" />
-            <ScalarProperty Name="RegionID" ColumnName="RegionID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Alphabetical_list_of_products"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Alphabetical_list_of_product"><MappingFragment StoreEntitySet="Alphabetical list of products">
-            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-            <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-            <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
-            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-            <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
-            <ScalarProperty Name="UnitsOnOrder" ColumnName="UnitsOnOrder" />
-            <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
-            <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
-            <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Current_Product_Lists"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Current_Product_List"><MappingFragment StoreEntitySet="Current Product List">
-            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Customer_and_Suppliers_by_Cities"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Customer_and_Suppliers_by_City"><MappingFragment StoreEntitySet="Customer and Suppliers by City">
-            <ScalarProperty Name="City" ColumnName="City" />
-            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-            <ScalarProperty Name="ContactName" ColumnName="ContactName" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Invoices"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Invoice"><MappingFragment StoreEntitySet="Invoices">
-            <ScalarProperty Name="ShipName" ColumnName="ShipName" />
-            <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
-            <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
-            <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
-            <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
-            <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
-            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-            <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
-            <ScalarProperty Name="Address" ColumnName="Address" />
-            <ScalarProperty Name="City" ColumnName="City" />
-            <ScalarProperty Name="Region" ColumnName="Region" />
-            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-            <ScalarProperty Name="Country" ColumnName="Country" />
-            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-            <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-            <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
-            <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-            <ScalarProperty Name="ShipperName" ColumnName="ShipperName" />
-            <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-            <ScalarProperty Name="Discount" ColumnName="Discount" />
-            <ScalarProperty Name="Freight" ColumnName="Freight" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Order_Subtotals"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Order_Subtotal"><MappingFragment StoreEntitySet="Order Subtotals">
-            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Orders_Qries"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Orders_Qry"><MappingFragment StoreEntitySet="Orders Qry">
-            <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-            <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-            <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-            <ScalarProperty Name="RequiredDate" ColumnName="RequiredDate" />
-            <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
-            <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
-            <ScalarProperty Name="Freight" ColumnName="Freight" />
-            <ScalarProperty Name="ShipName" ColumnName="ShipName" />
-            <ScalarProperty Name="ShipAddress" ColumnName="ShipAddress" />
-            <ScalarProperty Name="ShipCity" ColumnName="ShipCity" />
-            <ScalarProperty Name="ShipRegion" ColumnName="ShipRegion" />
-            <ScalarProperty Name="ShipPostalCode" ColumnName="ShipPostalCode" />
-            <ScalarProperty Name="ShipCountry" ColumnName="ShipCountry" />
-            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-            <ScalarProperty Name="Address" ColumnName="Address" />
-            <ScalarProperty Name="City" ColumnName="City" />
-            <ScalarProperty Name="Region" ColumnName="Region" />
-            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-            <ScalarProperty Name="Country" ColumnName="Country" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Product_Sales_for_1997"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Product_Sales_for_1997"><MappingFragment StoreEntitySet="Product Sales for 1997">
-            <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Products_Above_Average_Prices"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Products_Above_Average_Price"><MappingFragment StoreEntitySet="Products Above Average Price">
-            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-            <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Products_by_Categories"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Products_by_Category"><MappingFragment StoreEntitySet="Products by Category">
-            <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-            <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-            <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
-            <ScalarProperty Name="UnitsInStock" ColumnName="UnitsInStock" />
-            <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Quarterly_Orders"><EntityTypeMapping TypeName="NorthWindSQLiteModel.Quarterly_Order"><MappingFragment StoreEntitySet="Quarterly Orders">
-            <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
-            <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-            <ScalarProperty Name="City" ColumnName="City" />
-            <ScalarProperty Name="Country" ColumnName="Country" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="albums">
+            <EntityTypeMapping TypeName="NorthWindSQLiteModel.album">
+              <MappingFragment StoreEntitySet="album">
+                <ScalarProperty Name="albumcover" ColumnName="albumcover" />
+                <ScalarProperty Name="albumname" ColumnName="albumname" />
+                <ScalarProperty Name="albumartist" ColumnName="albumartist" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="songs">
+            <EntityTypeMapping TypeName="NorthWindSQLiteModel.song">
+              <MappingFragment StoreEntitySet="song">
+                <ScalarProperty Name="songname" ColumnName="songname" />
+                <ScalarProperty Name="songid" ColumnName="songid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_song_0" TypeName="NorthWindSQLiteModel.FK_song_0" StoreEntitySet="song">
+            <EndProperty Name="song">
+              <ScalarProperty Name="songid" ColumnName="songid" />
+            </EndProperty>
+            <EndProperty Name="album">
+              <ScalarProperty Name="albumname" ColumnName="songalbum" />
+              <ScalarProperty Name="albumartist" ColumnName="songartist" />
+            </EndProperty>
+            <Condition ColumnName="songartist" IsNull="false" />
+            <Condition ColumnName="songalbum" IsNull="false" />
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1008,35 +128,18 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="NorthWind">
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Category" Width="1.5" PointX="0.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.CustomerCustomerDemo" Width="1.5" PointX="2.75" PointY="0.75" Height="1.4033821614583335" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.CustomerDemographic" Width="1.5" PointX="0.75" PointY="3.75" Height="1.4033821614583322" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Customer" Width="1.5" PointX="2.75" PointY="3.75" Height="3.1340950520833335" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.EmployeeTerritory" Width="1.5" PointX="4.75" PointY="0.75" Height="1.4033821614583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Employee" Width="1.5" PointX="4.75" PointY="3.75" Height="4.480205078125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Order_Detail" Width="1.5" PointX="6.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Order" Width="1.5" PointX="6.75" PointY="3.75" Height="3.7109993489583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Product" Width="1.5" PointX="0.75" PointY="7.75" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Region" Width="1.5" PointX="8.75" PointY="0.75" Height="1.4033821614583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Shipper" Width="1.5" PointX="8.75" PointY="3.75" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Supplier" Width="1.5" PointX="8.75" PointY="6.75" Height="3.3263964843750031" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Territory" Width="1.5" PointX="2.75" PointY="9.75" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Alphabetical_list_of_product" Width="1.5" PointX="4.75" PointY="9.75" Height="3.1340950520833388" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Current_Product_List" Width="1.5" PointX="10.75" PointY="0.75" Height="1.4033821614583388" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Customer_and_Suppliers_by_City" Width="1.5" PointX="10.75" PointY="3.75" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Invoice" Width="1.5" PointX="10.75" PointY="6.75" Height="5.6340136718750031" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Order_Subtotal" Width="1.5" PointX="6.75" PointY="11.75" Height="1.2110807291666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Orders_Qry" Width="1.5" PointX="12.75" PointY="0.75" Height="4.8648079427083388" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Product_Sales_for_1997" Width="1.5" PointX="0.75" PointY="12.75" Height="1.4033821614583388" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Products_Above_Average_Price" Width="1.5" PointX="12.75" PointY="6.75" Height="1.4033821614583388" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Products_by_Category" Width="1.5" PointX="12.75" PointY="9.75" Height="1.9802864583333282" IsExpanded="true" />
-        <EntityTypeShape EntityType="NorthWindSQLiteModel.Quarterly_Order" Width="1.5" PointX="12.75" PointY="12.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="NorthWindSQLiteModel.album" Width="1.5" PointX="0.75" PointY="0.875" Height="1.787985026041667" />
+        <EntityTypeShape EntityType="NorthWindSQLiteModel.song" Width="1.5" PointX="3" PointY="1" Height="1.5956835937499996" />
+        <AssociationConnector Association="NorthWindSQLiteModel.FK_song_0" >
+          <ConnectorPoint PointX="2.25" PointY="1.7978417968749998" />
+          <ConnectorPoint PointX="3" PointY="1.7978417968749998" />
+        </AssociationConnector>
       </Diagram>
     </Diagrams>
   </Designer>

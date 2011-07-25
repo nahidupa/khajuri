@@ -23,12 +23,16 @@ namespace SystemDataSQLite
 
                 //using (NorthwindEntities context = new NorthwindEntities())
                 //{
+                
                 var result = from Customer c in context.Customers
                              select c;
                 List<Customer> customers = result.ToList();
+               
                 //}
 
                 dataGridView1.DataSource = customers;
+
+                
             }
             catch(Exception ex)
             {
